@@ -92,3 +92,7 @@ a {
 .units {
   font-size: 20px;
 }
+.signature {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
