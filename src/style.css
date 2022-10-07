@@ -97,5 +97,8 @@ a {
   font-family: "Open Sans", sans-serif;
 }
 .description-1 {
+  display: block;
+}
+.description-1::first-letter {
   text-transform: capitalize;
 }
