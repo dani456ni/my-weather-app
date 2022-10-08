@@ -95,17 +95,17 @@ a {
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
-.description-1 {
-  display: block;
-}
-.description-1::first-letter {
-  text-transform: capitalize;
-}
 .active {
-  color: #969ca2;
+  color: white;
   cursor: default;
   text-decoration: none;
 }
 .active:hover {
   text-decoration: none;
+}
+.description-1 {
+  display: block;
+}
+.description-1::first-letter {
+  text-transform: capitalize;
 }
