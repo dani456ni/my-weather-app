@@ -28,9 +28,8 @@ currentTime.innerHTML = formatDate(currentDate);
 
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsius = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML = Math.round(celsius);
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -69,25 +68,32 @@ function currentLocation(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
+function convertToFarenheit(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsius * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsius);
+}
+
 let currentPositionButton = document.querySelector("#current-position");
 currentPositionButton.addEventListener("click", currentLocation);
 
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", convertToFarenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
+
+let celsius = null;
+
 searchCity("Bogotá");
-
-//function convertToFarenheit(event) {
-//event.preventDefault();
-//let farenheitUnit = document.querySelector("#temperature");
-//farenheitUnit.innerHTML = `🌖 48°`;
-//}
-
-//let farenheit = document.querySelector("#farenheit-link");
-//farenheit.addEventListener("click", convertToFarenheit);
-
-//function convertToCelsius(event) {
-//event.preventDefault();
-//let farenheitUnit = document.querySelector("#temperature");
-//farenheitUnit.innerHTML = `🌖 9°`;
-//}
-
-//let celsius = document.querySelector("#celsius-link");
-//celsius.addEventListener("click", convertToCelsius);

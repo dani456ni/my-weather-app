@@ -26,7 +26,6 @@ p.details {
 h2,
 h1 {
   text-align: center;
-  margin-bottom: 35px;
   color: #fff;
   font-family: "Open Sans", sans-serif;
 }
@@ -101,4 +100,12 @@ a {
 }
 .description-1::first-letter {
   text-transform: capitalize;
+}
+.active {
+  color: #969ca2;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
 }
