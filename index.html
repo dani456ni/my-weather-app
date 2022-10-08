@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Patrick+Hand&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   
 </head>
   <body>
@@ -23,7 +23,7 @@
     <div class="container">
       <header>
         <form action="/" method="GET" class="form" id="search-form">
-          <input type="search" id="city-input" placeholder="Type a city" class="search-field" />
+          <input type="search" id="city-input" placeholder="Type a city" class="search-field" autocomplete="off"/>
           <button type="submit" class="btn btn-outline-light">Search</button>
           <button type="submit" class="btn btn-outline-light-1" id="current-position">Current</button>
         </form>
