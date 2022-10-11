@@ -28,7 +28,6 @@ h1 {
   text-align: center;
   color: #fff;
   font-family: "Open Sans", sans-serif;
-  max-width: 50px;
 }
 .column-one,
 .column-two,
@@ -104,9 +103,9 @@ a {
 .active:hover {
   text-decoration: none;
 }
-.description-1 {
+.description {
   display: block;
 }
-.description-1::first-letter {
-  text-transform: capitalize;
+.description:first-letter {
+  text-transform: uppercase;
 }
