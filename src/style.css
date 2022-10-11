@@ -110,14 +110,3 @@ a {
 .description-1::first-letter {
   text-transform: capitalize;
 }
-.temperature {
-  font-size: 64px;
-  line-height: 1;
-  font-weight: 400;
-}
-
-.icon {
-  position: relative;
-  font-size: 16px;
-  top: -34px;
-}
