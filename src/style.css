@@ -28,6 +28,7 @@ h1 {
   text-align: center;
   color: #fff;
   font-family: "Open Sans", sans-serif;
+  max-width: 50px;
 }
 .column-one,
 .column-two,
@@ -107,5 +108,15 @@ a {
   display: block;
 }
 .description-1::first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
+}
+.icon {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+.temperature {
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
 }
