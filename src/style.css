@@ -107,5 +107,5 @@ a {
   display: block;
 }
 .description-1::first-letter {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
