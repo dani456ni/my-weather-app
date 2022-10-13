@@ -103,9 +103,6 @@ a {
 .active:hover {
   text-decoration: none;
 }
-.description {
-  display: block;
-}
 .description:first-letter {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }

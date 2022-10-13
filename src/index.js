@@ -26,14 +26,24 @@ let currentTime = document.querySelector("#current-time");
 let currentDate = new Date();
 currentTime.innerHTML = formatDate(currentDate);
 
-function displayWeather(response) {
+function getWeatherEmoji(description) {
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].icon);
-  console.log(response.data.weather[0].icon);
+  icon.innerHTML = response.data.weather[0].description;
+  if (description === "clear sky") {
+    return "☀️";
+  } else if (description === "few clouds") {
+    return "🌤";
+  }
+}
+
+function displayWeather(response) {
+  //let iconElement = document.querySelector("#icon");
+  //iconElement.setAttribute(
+  // "src",
+  //`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  //);
+  //iconElement.setAttribute("alt", response.data.weather[0].icon);
+  //console.log(response.data.weather[0].icon);
   document.querySelector("#city").innerHTML = response.data.name;
   celsius = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(celsius);
