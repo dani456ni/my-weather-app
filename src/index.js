@@ -27,8 +27,7 @@ let currentDate = new Date();
 currentTime.innerHTML = formatDate(currentDate);
 
 function getWeatherEmoji(description) {
-  let iconElement = document.querySelector("#icon");
-  icon.innerHTML = response.data.weather[0].description;
+  let description = document.querySelector("#icon");
   if (description === "clear sky") {
     return "☀️";
   } else if (description === "few clouds") {
