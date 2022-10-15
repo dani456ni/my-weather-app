@@ -90,7 +90,7 @@ function displayWeather(response) {
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
-   ${titleCase(response.data.weather[0].description)};
+    response.data.weather[0].description;
   getForecast(response.data.coord);
 }
 
