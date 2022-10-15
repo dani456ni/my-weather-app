@@ -89,9 +89,18 @@ function displayWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
+  document.querySelector("#description").innerHTML = titleCase.apply(
+    response.data.weather[0].description
+  );
   getForecast(response.data.coord);
+}
+
+function titleCase(str) {
+  str = str.toLowerCase().split(" ");
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(" ");
 }
 
 function searchCity(city) {
