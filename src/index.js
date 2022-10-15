@@ -94,14 +94,6 @@ function displayWeather(response) {
   getForecast(response.data.coord);
 }
 
-function titleCase(str) {
-  str = str.toLowerCase().split(" ");
-  for (var i = 0; i < str.length; i++) {
-    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
-  }
-  return str.join(" ");
-}
-
 function searchCity(city) {
   let apiKey = "ed238469f9b5e9d801834270e65449bc";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
