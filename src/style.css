@@ -12,7 +12,7 @@
   );
 }
 
-.weather-app:first-letter {
+.weather-app {
   text-transform: capitalize;
 }
 
