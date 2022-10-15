@@ -26,41 +26,24 @@ let currentTime = document.querySelector("#current-time");
 let currentDate = new Date();
 currentTime.innerHTML = formatDate(currentDate);
 
-function displayForecast(response) {
-  let forecast = response.data.daily;
-
+function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
-      forecastHTML =
-        forecastHTML +
-        `
+  forecastElement.innerHTML = `
+         <div class="row">
       <div class="col-2">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+        <div class="weather-forecast-date">Thu</div>
         <img
-          src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
+          src=""
           alt=""
           width="42"
         />
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
-            forecastDay.temp.max
-          )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
-            forecastDay.temp.min
-          )}° </span>
+          <span class="weather-forecast-temperature-max">18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
         </div>
       </div>
   `;
-    }
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
 }
 
 function getWeatherEmoji(description) {
@@ -147,5 +130,7 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 let celsius = null;
+
+displayForecast();
 
 searchCity("Bogotá");
