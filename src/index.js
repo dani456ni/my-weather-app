@@ -28,9 +28,10 @@ currentTime.innerHTML = formatDate(currentDate);
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-
-  forecastElement.innerHTML = `
-         <div class="row">
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
       <div class="col-2">
         <div class="weather-forecast-date">Thu</div>
         <img
@@ -44,24 +45,18 @@ function displayForecast() {
         </div>
       </div>
   `;
-}
-
-function getWeatherEmoji(description) {
-  if (description === "clear sky") {
-    return "☀️";
-  } else if (description === "few clouds") {
-    return "🌤";
-  }
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function displayWeather(response) {
-  //let iconElement = document.querySelector("#icon");
-  //iconElement.setAttribute(
-  // "src",
-  //`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  //);
-  //iconElement.setAttribute("alt", response.data.weather[0].icon);
-  //console.log(response.data.weather[0].icon);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].icon);
+  console.log(response.data.weather[0].icon);
   document.querySelector("#city").innerHTML = response.data.name;
   celsius = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(celsius);
