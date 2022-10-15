@@ -11,6 +11,11 @@
     rgb(144, 175, 202) 97.1%
   );
 }
+
+.weather-app:first-letter {
+  text-transform: capitalize;
+}
+
 form {
   text-align: center;
   margin-bottom: 50px;
@@ -106,9 +111,6 @@ a {
 }
 .active:hover {
   text-decoration: none;
-}
-.description:first-letter {
-  text-transform: capitalize;
 }
 .weather-forecast-temperature-max {
   color: #5f677a;
